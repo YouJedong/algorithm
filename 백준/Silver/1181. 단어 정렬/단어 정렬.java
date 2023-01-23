@@ -12,6 +12,7 @@ class Main {
     for(int i = 0; i < N; i++) {
       arr[i] = br.readLine();
     }
+    br.close();
 
     Arrays.sort(arr, new Comparator<String>() {
       @Override
@@ -26,6 +27,8 @@ class Main {
       }
     });
 
+    StringBuilder sb = new StringBuilder();
+
     for (int i = 0; i < arr.length; i++) {
       for (int j = i + 1; j < arr.length; j++) {
         if (arr[i].length() != arr[j].length() || !arr[i].equals(arr[j])) {
@@ -35,7 +38,8 @@ class Main {
           continue;
         }
       }
-      System.out.println(arr[i]);
+      sb.append(arr[i]).append("\n");
     }
+    System.out.println(sb);
   }
 }
