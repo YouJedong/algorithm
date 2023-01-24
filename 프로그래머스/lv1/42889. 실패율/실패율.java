@@ -53,7 +53,7 @@ class Solution {
         public Stage(int stageNum, int challenger, int passer) {
             this.stageNum = stageNum;
             this.failRate = (double) challenger / (passer + challenger);
-            System.out.println(this.failRate);
+            // System.out.println(this.failRate);
         }
     }
 }
