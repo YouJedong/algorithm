@@ -1,3 +1,10 @@
+// 상한(Upper Bound)를 구한다.
+// ? 구하고 싶은 값(N)에서 중복 값(랜선을 자를 때 200 or 199 or 198로 잘라도 11개가 나온다)
+//   그렇기 때문에 상한(10개)를 만들 수 있는 길이 중에 최솟값을 구해서 -1 한 값이 우리가 구하고 싶은 값이다. 
+
+// 상한선(최대길이 + 1)이기 때문에 랜선의 길이는 int 최대값을 넘을 수 있어서 long타입으로..
+
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
@@ -22,12 +29,12 @@ public class Main {
       }
     }
 
-    max++;
+    max++; // mid가 0이 될 때 생기는 오류를 방지하기 위해 최대길이 + 1로 셋팅한다.
 
     long min = 0;
     long mid = 0;
 
-    while(min < max) {
+    while(min < max) { // 이분 탐색
       mid = (min + max) / 2;
 
       long count = 0;
@@ -37,7 +44,7 @@ public class Main {
 
       }
       if (count >= N) {
-        min = mid + 1;
+        min = mid + 1; // 만들수 있는 개수 같거나 더 큰 값은 필요 없기 때문에 + 1
       } else {
         max = mid;
       }
